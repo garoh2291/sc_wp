@@ -126,26 +126,33 @@
             <form class="sc_solution_type_form" id="solutionForm">
               <h3>Contact us</h3>
               <div class="sc_solution_input_standart">
-                <label for="fullName">Full Name*</label>
-                <input type="text" name="fullName" id="fullName" required />
+                <label for="Name">Full Name*</label>
+                <input type="text" name="Name" id="Name" required />
               </div>
               <div class="sc_solution_input_standart">
-                <label for="company">Company Name*</label>
-                <input type="text" name="company" id="company" required />
+                <label for="Company">Company Name*</label>
+                <input type="text" name="Company" id="Company" required />
               </div>
               <div class="sc_solution_input_standart">
-                <label for="email">Email*</label>
-                <input type="email" name="email" id="email" required />
+                <label for="Email">Email*</label>
+                <input type="email" name="Email" id="Email" required />
               </div>
               <div class="sc_solution_input_standart">
-                <label for="phone">Phone*</label>
-                <input type="text" name="phone" id="phone" required />
+                <label for="Phone">Phone*</label>
+                <input
+                  type="tel"
+                  pattern="\+[0-9]*"
+                  placeholder="+1234567890"
+                  name="Phone"
+                  id="Phone"
+                  required
+                />
               </div>
               <div class="sc_solution_input_standart full_width">
-                <label for="message">Message</label>
+                <label for="Message">Message</label>
                 <textarea
-                  name="message"
-                  id="message"
+                  name="Message"
+                  id="Message"
                   cols="30"
                   rows="10"
                   placeholder="Additional information you want to share with us."
@@ -238,7 +245,7 @@
       </div>
       <!--  Solutions services -->
       <div class="sc_solution_services">
-        <div class="sc_solution_service_item">
+        <div class="sc_solution_service_item page_solution">
           <div class="sc_solution_item_img">
             <img
               src="https://serviceclub.com/wp-content/uploads/2023/10/new-360-1.svg"
@@ -248,7 +255,7 @@
           </div>
           <p class="sc_solution_item_text">Tailormade solution</p>
         </div>
-        <div class="sc_solution_service_item">
+        <div class="sc_solution_service_item page_solution">
           <div class="sc_solution_item_img">
             <img
               src="https://serviceclub.com/wp-content/uploads/2023/10/new-360-2.svg"
@@ -258,7 +265,7 @@
           </div>
           <p class="sc_solution_item_text">Continuous ongoing assistance</p>
         </div>
-        <div class="sc_solution_service_item">
+        <div class="sc_solution_service_item page_solution">
           <div class="sc_solution_item_img">
             <img
               src="https://serviceclub.com/wp-content/uploads/2023/10/new-360-3.svg"

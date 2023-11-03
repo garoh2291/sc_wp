@@ -126,35 +126,42 @@
             <form class="sc_solution_type_form" id="leadForm1">
               <h3>Tell us your needs!</h3>
               <div class="sc_solution_input_standart full_width">
-                <label for="drivers">How many drivers do you need?</label>
-                <select name="drivers" id="drivers">
+                <label for="Drivers">How many drivers do you need?*</label>
+                <select name="Drivers" id="Drivers" required>
                   <option value="">Select an option</option>
-                  <option value="1">1 driver</option>
-                  <option value="2">2 drivers</option>
-                  <option value="3">3 drivers</option>
-                  <option value="4">4 drivers</option>
-                  <option value="5">5 drivers</option>
+                  <option value="1 driver">1 driver</option>
+                  <option value="2 driver">2 drivers</option>
+                  <option value="3 driver">3 drivers</option>
+                  <option value="4 driver">4 drivers</option>
+                  <option value="5 driver">5 drivers</option>
                 </select>
               </div>
               <div class="sc_solution_input_standart full_width">
-                <label for="urgency">What’s the urgency?</label>
-                <input type="text" name="urgency" id="urgency" />
+                <label for="Urgency">What’s the urgency?</label>
+                <input type="text" name="Urgency" id="Urgency" />
               </div>
               <div class="sc_solution_input_standart">
-                <label for="fullName">Full Name*</label>
-                <input type="text" name="fullName" id="fullName" required />
+                <label for="Name">Full Name*</label>
+                <input type="text" name="Name" id="Name" required />
               </div>
               <div class="sc_solution_input_standart">
-                <label for="company">Company Name*</label>
-                <input type="text" name="company" id="company" required />
+                <label for="Company">Company Name*</label>
+                <input type="text" name="Company" id="Company" required />
               </div>
               <div class="sc_solution_input_standart">
-                <label for="email">Email*</label>
-                <input type="email" name="email" id="email" required />
+                <label for="Email">Email*</label>
+                <input type="email" name="Email" id="Email" required />
               </div>
               <div class="sc_solution_input_standart">
-                <label for="phone">Phone*</label>
-                <input type="text" name="phone" id="phone" required />
+                <label for="Phone">Phone*</label>
+                <input
+                  type="tel"
+                  pattern="\+[0-9]*"
+                  placeholder="+1234567890"
+                  name="Phone"
+                  id="Phone"
+                  required
+                />
               </div>
               <div class="sc_solution_form_btn_wrapper">
                 <button
@@ -169,68 +176,74 @@
             <form class="sc_solution_type_form is_hidden" id="leadForm2">
               <h3>Fill job details</h3>
               <div class="sc_solution_input_standart">
-                <label for="jobTitle">Job title</label>
+                <label for="Job Title">Job title*</label>
                 <input
                   type="text"
-                  name="jobTitle"
+                  name="Job Title"
                   id="jobTitle"
                   placeholder="Ex. Van Driver Courier"
+                  required
                 />
               </div>
               <div class="sc_solution_input_standart">
-                <label for="location">Location for the position</label>
+                <label for="Location">Location for the position*</label>
                 <input
                   type="text"
-                  name="location"
-                  id="location"
+                  name="Location"
+                  id="Location"
                   placeholder="Ex. London, UK"
+                  required
                 />
               </div>
               <div class="sc_solution_input_standart">
-                <label for="schedule">Schedule</label>
-                <select name="schedule" id="schedule">
+                <label for="Schedule">Schedule*</label>
+                <select name="Schedule" id="Schedule" required>
                   <option value="">Select an option</option>
-                  <option value="1">Full time</option>
-                  <option value="2">Part time</option>
+                  <option value="Full Time">Full time</option>
+                  <option value="Part Time">Part time</option>
                 </select>
               </div>
               <div class="sc_solution_input_standart">
-                <label for="salary">Salary from</label>
+                <label for="Salary">Salary from*</label>
                 <input
                   type="text"
-                  name="salary"
-                  id="salary"
+                  name="Salary from"
+                  id="Salary"
                   placeholder="Ex. 29000$"
+                  required
                 />
               </div>
               <div class="sc_solution_input_standart full_width">
-                <label for="jobDescription">Brief job description</label>
+                <label for="jobDescription">Brief job description*</label>
                 <textarea
-                  name="jobDescription"
+                  name="Job Description"
                   id="jobDescription"
                   cols="30"
                   rows="10"
                   placeholder="Write job description"
+                  required
                 ></textarea>
               </div>
               <div class="sc_solution_input_standart full_width">
-                <label for="benefits">Benefits</label>
+                <label for="Benefits">Benefits*</label>
                 <textarea
-                  name="benefits"
-                  id="benefits"
+                  name="Benefits"
+                  id="Benefits"
                   cols="30"
                   rows="10"
                   placeholder="Medical Insurance, vacation days, etc."
+                  required
                 ></textarea>
               </div>
               <div class="sc_solution_input_standart full_width">
-                <label for="license">License requirements</label>
+                <label for="License">License requirements*</label>
                 <textarea
-                  name="license"
-                  id="license"
+                  name="License"
+                  id="License"
                   cols="30"
                   rows="10"
                   placeholder="Language, driving license for car, for small van, for big van, etc."
+                  required
                 ></textarea>
               </div>
               <div class="sc_solution_form_btn_wrapper step_2">
@@ -253,7 +266,7 @@
                   class="sc_button_blue"
                   id="leadFormButton2"
                 >
-                  Continue
+                  Let’s go
                 </button>
               </div>
             </form>
@@ -348,34 +361,32 @@
         <div class="sc_solution_service_item">
           <div class="sc_solution_item_img">
             <img
-              src="https://serviceclub.com/wp-content/uploads/2023/10/new-360-1.svg"
-              data-src="https://serviceclub.com/wp-content/uploads/2023/10/new-360-1.svg"
+              src="https://serviceclub.com/wp-content/uploads/2023/11/aasdd.svg"
+              data-src="https://serviceclub.com/wp-content/uploads/2023/11/aasdd.svg"
               alt="solution"
             />
           </div>
-          <p class="sc_solution_item_text">Tailormade solution</p>
+          <p class="sc_solution_item_text">Fair market pricing</p>
         </div>
         <div class="sc_solution_service_item">
           <div class="sc_solution_item_img">
             <img
-              src="https://serviceclub.com/wp-content/uploads/2023/10/new-360-2.svg"
-              data-src="https://serviceclub.com/wp-content/uploads/2023/10/new-360-2.svg"
+              src="https://serviceclub.com/wp-content/uploads/2023/11/aasdd2.svg"
+              data-src="https://serviceclub.com/wp-content/uploads/2023/11/aasdd2.svg"
               alt="solution"
             />
           </div>
-          <p class="sc_solution_item_text">Continuous ongoing assistance</p>
+          <p class="sc_solution_item_text">Effortless candidate sourcing</p>
         </div>
         <div class="sc_solution_service_item">
           <div class="sc_solution_item_img">
             <img
-              src="https://serviceclub.com/wp-content/uploads/2023/10/new-360-3.svg"
-              data-src="https://serviceclub.com/wp-content/uploads/2023/10/new-360-3.svg"
+              src="https://serviceclub.com/wp-content/uploads/2023/11/aasdd3.svg"
+              data-src="https://serviceclub.com/wp-content/uploads/2023/11/aasdd3.svg"
               alt="solution"
             />
           </div>
-          <p class="sc_solution_item_text">
-            Focus on long-term stability in your workforce
-          </p>
+          <p class="sc_solution_item_text">Improved hiring decisions</p>
         </div>
       </div>
       <!--  Partners -->

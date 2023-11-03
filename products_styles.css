@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+button {
+  cursor: pointer;
+}
+
+.sc_button_blue:hover,
+.sc_product_card_head_btn > a > button:hover {
+  border-radius: 30px;
+  background: #5e7483;
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.12);
+}
+
 .sc_custom_container {
   margin: 0;
   width: 100%;
@@ -150,6 +161,7 @@
   background: #02263f;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.12);
   color: #fff;
+  text-wrap: nowrap;
 
   text-align: right;
   /* Button */
@@ -539,12 +551,17 @@ textarea::placeholder {
 }
 
 .sc_solution_service_item {
-  width: 291px;
+  /* width: 291px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+
+.page_solution.sc_solution_service_item {
+  width: 100%;
+  max-width: 291px;
 }
 
 .sc_solution_service_item > img {
@@ -672,9 +689,29 @@ textarea::placeholder {
   }
 }
 
-@media (max-width: 1450px) {
-  .sc_product_card_wrapper {
+@media (max-width: 1570px) {
+  /* .sc_product_card_wrapper {
     flex-wrap: wrap;
+  } */
+
+  .sc_modal_wrapper {
+    padding: 30px 18px;
+  }
+
+  .sc_product_main_head_content {
+    max-width: 895px;
+    width: 100%;
+  }
+
+  .sc_solution_type_main_wrapper {
+    padding: 0 40px;
+
+    gap: 40px;
+  }
+
+  .sc_product_partners_logo_wrapper {
+    max-width: 1080px;
+    width: 100%;
   }
 }
 
@@ -733,6 +770,7 @@ textarea::placeholder {
   .sc_product_card_wrapper {
     padding: 60px 20px 30px;
     gap: 30px;
+    flex-wrap: wrap;
   }
   .hidden_mobile {
     display: none;
@@ -920,6 +958,7 @@ textarea::placeholder {
   .sc_solution_services {
     padding: 30px 0;
     gap: 60px;
+    flex-direction: column;
   }
 
   .sc_solution_service_item > .sc_solution_item_img {
@@ -1004,6 +1043,40 @@ textarea::placeholder {
   .sc_solutioon_type_form_wrapper {
     width: 100%;
     padding: 0;
+    flex: unset;
+  }
+
+  .sc_solution_type_form_content.success_message {
+    width: 100%;
+    padding: 36px 20px;
+    height: unset;
+  }
+
+  .sc_congrats_messsage {
+    padding: 0;
+    gap: 24px;
+  }
+
+  .sc_congrats_messsage > h4 {
+    color: var(--label-color-light-primary, #000);
+    text-align: center;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 46px; /* 127.778% */
+    letter-spacing: -2px;
+  }
+
+  .sc_congrats_messsage > p {
+    color: #000;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
   }
 
   .hidden_desktop {
