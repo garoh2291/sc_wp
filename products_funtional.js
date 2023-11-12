@@ -8,12 +8,24 @@ const solutionForm = document.querySelector("#solutionForm");
 const leadFormbutton1 = document.querySelector("#leadFormbutton1");
 const leadFormbutton2 = document.querySelector("#leadFormButton2");
 const leadFormbuttonBack = document.querySelector("#leadFormbuttonBack");
+const summaryBackBtn = document.querySelector("#summaryBackBtn");
 
 //
 const leadForm1 = document.querySelector("#leadForm1");
 const leadForm2 = document.querySelector("#leadForm2");
-const leadForm3 = document.querySelector("#leadForm3");
+const summaryBtn = document.querySelector("#summaryBtn");
+const leadFormLast = document.querySelector("#leadFormLast");
 const leadFormWrap = document.querySelector("#leadFormWrap");
+
+const summaryLeads = document.querySelector("#summaryLeads");
+
+const driverInput = document.querySelector("#Drivers");
+
+driverInput.addEventListener("change", function (e) {
+  const drivers = e.target.value;
+  const price = parseFloat(drivers) * 5;
+  document.querySelector("#Leads").value = `${price} Leads`;
+});
 
 function generateUniqueId() {
   // Create a timestamp-based ID
@@ -44,6 +56,9 @@ const appUrl3Old =
 
 const appUrl3 =
   "https://script.google.com/macros/s/AKfycbzDEuxLCLgkAUvD3fDwXbwgAdMPdjyit54Rv-wYQ67VYPpfH4smZlxy9TsX1liZA-ZU/exec";
+
+// const appUrl3 =
+//   "https://script.google.com/macros/s/AKfycbxM7SPouEjeBjsNOczRSN91xqPjTulSMC_M4b1CmoaNhn5s6SMlPqu46baH80B4GU77/exec";
 
 contactBtn?.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
@@ -96,6 +111,15 @@ function leadFormSubmit(e) {
   leadFormbutton1.textContent = "Sending...";
   const leadFormStart = new FormData(leadForm1);
   const leadFormEnd = new FormData(leadForm2);
+
+  const leads = leadFormStart.get("Leads");
+
+  console.log(leads);
+
+  document.querySelector("#leadFormLeads").textContent = parseFloat(leads);
+  document.querySelector("#priceSummary").textContent = `${
+    parseFloat(leads) * 35
+  }£`;
 
   leadFormStart.append("sheet", "leads");
   leadFormStart.append("id", id);
@@ -151,9 +175,47 @@ function leadFormSubmit2(e) {
     })
     .finally(() => {
       leadForm2.classList.add("is_hidden");
-      leadForm3.classList.remove("is_hidden");
-      leadFormWrap.classList.add("success_message");
+      summaryLeads.classList.remove("is_hidden");
+      // leadFormWrap.classList.add("success_message");
       leadFormbutton2.textContent = " Let’s go";
+      document.querySelector(".sc_solution_type_form_content").scrollIntoView({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+}
+
+function leadFormSubmit3(e) {
+  e.preventDefault();
+
+  const leadFormStart = new FormData(leadForm1);
+  const leadFormEnd = new FormData(leadForm2);
+
+  leadFormStart.append("sheet", "leads");
+
+  leadFormStart.append("id", id);
+
+  leadFormStart.append("Accept", "Accepted");
+
+  for (let pair of leadFormEnd.entries()) {
+    leadFormStart.append(pair[0], pair[1]);
+  }
+
+  fetch(appUrl3, {
+    method: "POST",
+    body: leadFormStart,
+  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    .finally(() => {
+      summaryLeads.classList.add("is_hidden");
+      leadFormLast.classList.remove("is_hidden");
+      leadFormWrap.classList.add("success_message");
+      // leadFormbutton2.textContent = " Let’s go";
       document.querySelector(".sc_solution_type_form_content").scrollIntoView({
         top: 0,
         behavior: "smooth",
@@ -169,6 +231,8 @@ leadForm1?.addEventListener("submit", leadFormSubmit);
 
 leadForm2?.addEventListener("submit", leadFormSubmit2);
 
+summaryBtn?.addEventListener("click", leadFormSubmit3);
+
 formButton?.addEventListener("click", function () {
   document.querySelector(".sc_solution_type_form_content").scrollIntoView({
     top: 0,
@@ -180,4 +244,10 @@ leadFormbuttonBack?.addEventListener("click", function (e) {
   e.preventDefault();
   leadForm1.classList.remove("is_hidden");
   leadForm2.classList.add("is_hidden");
+});
+
+summaryBackBtn?.addEventListener("click", function (e) {
+  e.preventDefault();
+  leadForm2.classList.remove("is_hidden");
+  summaryLeads.classList.add("is_hidden");
 });
