@@ -599,7 +599,7 @@ select {
   background-color: #032f4f;
 }
 
-.sc_custom_dropdown_menu > p {
+.sc_custom_dropdown_menu > li {
   color: var(--grey-scale-black, #000);
   /* M3/body/large */
   /* font-family: Roboto; */

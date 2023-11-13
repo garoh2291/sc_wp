@@ -20,36 +20,39 @@ const leadFormWrap = document.querySelector("#leadFormWrap");
 const summaryLeads = document.querySelector("#summaryLeads");
 
 const driverInput = document.querySelector("#Drivers");
-const leadSelect = document.querySelectorAll(".sc_custom_dropdown_menu>p");
+const leadSelect = document.querySelectorAll(".sc_custom_dropdown_menu>li");
 const leadSelected = document.querySelector("#leadValue");
 
 driverInput?.addEventListener("change", function (e) {
   const drivers = e.target.value;
   const price = parseFloat(drivers) * 5;
-  leadSelected.textContent = `${price} Leads`;
+
+  const optimizedPrice = isNaN(price) ? "Select an option" : `${price} Leads`;
+  leadSelected.textContent = optimizedPrice;
 });
 
 leadSelected?.addEventListener("click", function (e) {
   document
     .querySelector(".sc_custom_dropdown_menu_wrapper")
-    .classList.toggle("is_visible");
+    ?.classList.toggle("is_visible");
 
   document
     .querySelector(".sc_custom_dropdown_arrow")
-    .classList.toggle("isOpen");
+    ?.classList.toggle("isOpen");
 });
 
 leadSelect?.forEach((item) => {
   item.addEventListener("click", function (e) {
     const drivers = e.target.textContent;
+
     leadSelected.textContent = `${drivers}`;
     document
       .querySelector(".sc_custom_dropdown_menu_wrapper")
-      .classList.toggle("is_visible");
+      ?.classList.toggle("is_visible");
 
     document
       .querySelector(".sc_custom_dropdown_arrow")
-      .classList.toggle("isOpen");
+      ?.classList.remove("isOpen");
   });
 });
 
@@ -105,6 +108,10 @@ window.addEventListener("click", function (e) {
     document
       .querySelector(".sc_custom_dropdown_menu_wrapper")
       ?.classList.remove("is_visible");
+
+    document
+      .querySelector(".sc_custom_dropdown_arrow")
+      ?.classList.remove("isOpen");
   }
 
   console.log(e.target);
