@@ -20,11 +20,37 @@ const leadFormWrap = document.querySelector("#leadFormWrap");
 const summaryLeads = document.querySelector("#summaryLeads");
 
 const driverInput = document.querySelector("#Drivers");
+const leadSelect = document.querySelectorAll(".sc_custom_dropdown_menu>p");
+const leadSelected = document.querySelector("#leadValue");
 
-driverInput.addEventListener("change", function (e) {
+driverInput?.addEventListener("change", function (e) {
   const drivers = e.target.value;
   const price = parseFloat(drivers) * 5;
-  document.querySelector("#Leads").value = `${price} Leads`;
+  leadSelected.textContent = `${price} Leads`;
+});
+
+leadSelected?.addEventListener("click", function (e) {
+  document
+    .querySelector(".sc_custom_dropdown_menu_wrapper")
+    .classList.toggle("is_visible");
+
+  document
+    .querySelector(".sc_custom_dropdown_arrow")
+    .classList.toggle("isOpen");
+});
+
+leadSelect?.forEach((item) => {
+  item.addEventListener("click", function (e) {
+    const drivers = e.target.textContent;
+    leadSelected.textContent = `${drivers}`;
+    document
+      .querySelector(".sc_custom_dropdown_menu_wrapper")
+      .classList.toggle("is_visible");
+
+    document
+      .querySelector(".sc_custom_dropdown_arrow")
+      .classList.toggle("isOpen");
+  });
 });
 
 function generateUniqueId() {
@@ -74,6 +100,14 @@ window.addEventListener("click", function (e) {
 
     document.querySelector(".sc_modal_wrapper").classList.toggle("is_visible");
   }
+
+  if (!e.target.classList.contains("sc_custom_dropdown_selected_value")) {
+    document
+      .querySelector(".sc_custom_dropdown_menu_wrapper")
+      ?.classList.remove("is_visible");
+  }
+
+  console.log(e.target);
 });
 
 function formSubmit(e) {
@@ -112,17 +146,18 @@ function leadFormSubmit(e) {
   const leadFormStart = new FormData(leadForm1);
   const leadFormEnd = new FormData(leadForm2);
 
-  const leads = leadFormStart.get("Leads");
+  const Leads = leadSelected.textContent;
 
-  console.log(leads);
+  console.log(Leads);
 
-  document.querySelector("#leadFormLeads").textContent = parseFloat(leads);
+  document.querySelector("#leadFormLeads").textContent = parseFloat(Leads);
   document.querySelector("#priceSummary").textContent = `${
-    parseFloat(leads) * 35
+    parseFloat(Leads) * 35
   }£`;
 
   leadFormStart.append("sheet", "leads");
   leadFormStart.append("id", id);
+  leadFormStart.append("Leads", Leads);
 
   for (let pair of leadFormEnd.entries()) {
     leadFormStart.append(pair[0], pair[1]);
@@ -153,6 +188,9 @@ function leadFormSubmit2(e) {
   e.preventDefault();
   const leadFormStart = new FormData(leadForm1);
   const leadFormEnd = new FormData(leadForm2);
+  const Leads = leadSelected.textContent;
+  leadFormStart.append("Leads", Leads);
+
   leadFormbutton2.textContent = "Sending...";
 
   leadFormStart.append("sheet", "leads");
@@ -190,6 +228,8 @@ function leadFormSubmit3(e) {
 
   const leadFormStart = new FormData(leadForm1);
   const leadFormEnd = new FormData(leadForm2);
+  const Leads = leadSelected.textContent;
+  leadFormStart.append("Leads", Leads);
 
   leadFormStart.append("sheet", "leads");
 
