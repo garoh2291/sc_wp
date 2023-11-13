@@ -80,11 +80,11 @@ const appUrl2 =
 const appUrl3Old =
   "https://script.google.com/macros/s/AKfycbyVQqK4rUQYxyPx5hmAcAHrgy3d7SzEaDV2GzkPvv_-jYrbKy3_3YhcmP_LZAnI65m6/exec";
 
-const appUrl3 =
-  "https://script.google.com/macros/s/AKfycbzDEuxLCLgkAUvD3fDwXbwgAdMPdjyit54Rv-wYQ67VYPpfH4smZlxy9TsX1liZA-ZU/exec";
-
 // const appUrl3 =
-//   "https://script.google.com/macros/s/AKfycbxM7SPouEjeBjsNOczRSN91xqPjTulSMC_M4b1CmoaNhn5s6SMlPqu46baH80B4GU77/exec";
+//   "https://script.google.com/macros/s/AKfycbzDEuxLCLgkAUvD3fDwXbwgAdMPdjyit54Rv-wYQ67VYPpfH4smZlxy9TsX1liZA-ZU/exec";
+
+const appUrl3 =
+  "https://script.google.com/macros/s/AKfycbxM7SPouEjeBjsNOczRSN91xqPjTulSMC_M4b1CmoaNhn5s6SMlPqu46baH80B4GU77/exec";
 
 contactBtn?.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
@@ -235,7 +235,7 @@ function leadFormSubmit3(e) {
 
   leadFormStart.append("id", id);
 
-  leadFormStart.append("Accept", "Accepted");
+  leadFormStart.append("Accepted", "YES");
 
   for (let pair of leadFormEnd.entries()) {
     leadFormStart.append(pair[0], pair[1]);

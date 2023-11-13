@@ -345,7 +345,8 @@ button {
 } */
 
 .sc_solution_pricing {
-  margin-top: 66px;
+  margin-top: 10px;
+  margin-right: 100px;
   color: #000;
 
   text-align: right;
@@ -426,9 +427,10 @@ button {
 
 .sc_solution_type_form_content.success_message {
   /* background-color: rgba(255, 255, 255, 0.7); */
-  opacity: 0.7;
+  /* opacity: 0.7; */
   min-height: unset;
-  height: 684px;
+  height: 506px;
+  padding: 28px;
 }
 
 .sc_congrats_messsage {
@@ -1209,6 +1211,7 @@ textarea::placeholder {
   }
 
   .sc_solution_pricing {
+    margin-right: 0;
     color: #02263f;
     text-align: right;
     font-family: Inter;
