@@ -398,6 +398,7 @@ button {
 }
 
 .sc_solutioon_type_text_value_item > span {
+  flex: 1;
   color: #000;
   font-family: Inter;
   font-size: 18px;

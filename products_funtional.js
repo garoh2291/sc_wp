@@ -24,7 +24,7 @@ const leadSelect = document.querySelectorAll(".sc_custom_dropdown_menu>li");
 const leadSelected = document.querySelector("#leadValue");
 
 driverInput?.addEventListener("change", function (e) {
-  const drivers = e.target.value;
+  const drivers = e.target?.value;
   const price = parseFloat(drivers) * 5;
 
   const optimizedPrice = isNaN(price) ? "Select an option" : `${price} Leads`;
@@ -33,25 +33,25 @@ driverInput?.addEventListener("change", function (e) {
 
 leadSelected?.addEventListener("click", function (e) {
   document
-    .querySelector(".sc_custom_dropdown_menu_wrapper")
+    ?.querySelector(".sc_custom_dropdown_menu_wrapper")
     ?.classList.toggle("is_visible");
 
   document
-    .querySelector(".sc_custom_dropdown_arrow")
+    ?.querySelector(".sc_custom_dropdown_arrow")
     ?.classList.toggle("isOpen");
 });
 
 leadSelect?.forEach((item) => {
-  item.addEventListener("click", function (e) {
-    const drivers = e.target.textContent;
+  item?.addEventListener("click", function (e) {
+    const drivers = e.target?.textContent;
 
     leadSelected.textContent = `${drivers}`;
     document
-      .querySelector(".sc_custom_dropdown_menu_wrapper")
+      ?.querySelector(".sc_custom_dropdown_menu_wrapper")
       ?.classList.toggle("is_visible");
 
     document
-      .querySelector(".sc_custom_dropdown_arrow")
+      ?.querySelector(".sc_custom_dropdown_arrow")
       ?.classList.remove("isOpen");
   });
 });
@@ -92,7 +92,7 @@ const appUrl3 =
 contactBtn?.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
-  document.querySelector(".sc_modal_wrapper").classList.toggle("is_visible");
+  document.querySelector(".sc_modal_wrapper")?.classList.toggle("is_visible");
 });
 
 window.addEventListener("click", function (e) {
@@ -101,20 +101,18 @@ window.addEventListener("click", function (e) {
   if (e.target.classList.contains("sc_modal_wrapper")) {
     document.body.style.overflow = "auto";
 
-    document.querySelector(".sc_modal_wrapper").classList.toggle("is_visible");
+    document.querySelector(".sc_modal_wrapper")?.classList.toggle("is_visible");
   }
 
   if (!e.target.classList.contains("sc_custom_dropdown_selected_value")) {
     document
-      .querySelector(".sc_custom_dropdown_menu_wrapper")
+      ?.querySelector(".sc_custom_dropdown_menu_wrapper")
       ?.classList.remove("is_visible");
 
     document
-      .querySelector(".sc_custom_dropdown_arrow")
+      ?.querySelector(".sc_custom_dropdown_arrow")
       ?.classList.remove("isOpen");
   }
-
-  console.log(e.target);
 });
 
 function formSubmit(e) {
@@ -142,6 +140,7 @@ function formSubmit(e) {
         .querySelector(".sc_modal_wrapper")
         ?.classList.toggle("is_visible");
       document.querySelector(".sc_button_blue").textContent = "Contact Sales";
+      document.body.style.overflow = "auto";
 
       e.target.reset();
     });
