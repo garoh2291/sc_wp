@@ -89,7 +89,7 @@ const appUrl3Old =
 const appUrl3 =
   "https://script.google.com/macros/s/AKfycbxM7SPouEjeBjsNOczRSN91xqPjTulSMC_M4b1CmoaNhn5s6SMlPqu46baH80B4GU77/exec";
 
-contactBtn?.addEventListener("click", function () {
+formButton?.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
   document.querySelector(".sc_modal_wrapper")?.classList.toggle("is_visible");
@@ -279,12 +279,12 @@ leadForm2?.addEventListener("submit", leadFormSubmit2);
 
 summaryBtn?.addEventListener("click", leadFormSubmit3);
 
-formButton?.addEventListener("click", function () {
-  document.querySelector(".sc_solution_type_form_content").scrollIntoView({
-    top: 0,
-    behavior: "smooth",
-  });
-});
+// formButton?.addEventListener("click", function () {
+//   document.querySelector(".sc_solution_type_form_content").scrollIntoView({
+//     top: 0,
+//     behavior: "smooth",
+//   });
+// });
 
 leadFormbuttonBack?.addEventListener("click", function (e) {
   e.preventDefault();

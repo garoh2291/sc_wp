@@ -13,10 +13,69 @@
     <title>Leads</title>
   </head>
   <body>
+    <!-- Modal -->
+    <div class="sc_modal_wrapper">
+      <div class="sc_solution_type_form_content sc_modal_contact">
+        <form
+          class="sc_solution_type_form"
+          id="form"
+          name="submit-to-google-sheet"
+        >
+          <h3>Contact us</h3>
+          <div class="sc_solution_input_standart">
+            <label for="Name">Full Name*</label>
+            <input type="text" name="Name" id="Name" required />
+          </div>
+          <div class="sc_solution_input_standart">
+            <label for="Company">Company Name*</label>
+            <input type="text" name="Company" id="Company" required />
+          </div>
+          <div class="sc_solution_input_standart">
+            <label for="Email">Email*</label>
+            <input type="email" name="Email" id="Email" required />
+          </div>
+          <div class="sc_solution_input_standart">
+            <label for="Phone">Phone*</label>
+            <input
+              type="tel"
+              pattern="\+[0-9]*"
+              placeholder="+1234567890"
+              name="Phone"
+              id="Phone"
+              required
+            />
+          </div>
+          <div class="sc_solution_input_standart full_width">
+            <label for="Message">Message</label>
+            <textarea
+              name="Message"
+              id="Message"
+              cols="30"
+              rows="10"
+              placeholder="Additional information you want to share with us."
+            ></textarea>
+          </div>
+          <div class="sc_solution_form_bottom_wrapper">
+            <div class="sc_solution_form_therms_wrapper">
+              By clicking on continue you accept our
+              <a href="https://serviceclub.com/company-terms-conditions/"
+                >terms & conditions</a
+              >
+            </div>
+            <div class="sc_solution_form_btn_wrapper">
+              <button type="submit" class="sc_button_blue">
+                Contact Sales
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <div class="sc_custom_container">
       <!--  Header -->
       <div class="sc_custom_header">
-        <a href="/">
+        <a href="http://serviceclub.com/products">
           <img
             class="sc_custom_header_logo"
             data-src="https://serviceclub.com/wp-content/uploads/2023/10/Logo-Horizontal.svg"
